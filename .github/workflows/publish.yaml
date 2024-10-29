@@ -16,5 +16,7 @@ jobs:
           cache: 'maven'
       - name: Start database
         uses: hoverkraft-tech/compose-action@v2.0.2
+      - name: Wait for MySQL to start
+        run: sleep 15
       - name: Build
         run: ./mvnw -B verify
